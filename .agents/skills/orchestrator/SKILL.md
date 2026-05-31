@@ -19,7 +19,8 @@ This project is a **knowledge base for technical interview preparation**. It is 
 Knowledge-Interviewing-With-AI-Agent/
 ├── .agents/skills/
 │   ├── orchestrator/   # YOU (this skill)
-├── common/                      # General/soft-skill topics (your-self, javascript)
+├── common/                      # General/soft-skill topics (your-self, agile, javascript)
+├── methodologies/               # Delivery methodologies (waterfall, agile, scrum, kanban)
 ├── backend/                     # Backend topics (nodejs, nestjs, rust, common)
 ├── frontend/                    # Frontend topics (react, nextjs, redux, nginx, web-performance)
 ├── methodologies/               # Delivery/process topics (agile, scrum, kanban, lean, waterfall)
@@ -53,8 +54,8 @@ Each topic directory follows these patterns:
 
 ## Available Subagents
 
-| Subagent        | Skill Path                               | Purpose                                         | When to Delegate                                                |
-| --------------- | ---------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------- |
+| Subagent        | Skill Path                                | Purpose                                         | When to Delegate                                                |
+| --------------- | ----------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------- |
 | **Interviewer** | `.codex/agents/subagent-interviewer.toml` | Generate Q&A content following Bloom's Taxonomy | When user wants to create, add, or generate interview questions |
 
 ---
@@ -90,8 +91,8 @@ Resolve the user's topic to the correct directory in the repository:
 | "testing", "TDD", "unit test"                    | `testing/`          |
 | "networking", "TCP/IP", "HTTP", "DNS"            | `networking/`       |
 | "OS", "process", "thread", "memory"              | `os/`               |
-| "about me", "self intro", "soft skills"         | `common/`           |
-| "agile", "scrum", "kanban", "lean", "waterfall" | `methodologies/`    |
+| "about me", "self intro", "soft skills", "agile" | `common/`           |
+| "waterfall", "scrum", "kanban", "methodology"    | `methodologies/`    |
 | anything else                                    | `others-topic/`     |
 
 ### 3. Delegate
