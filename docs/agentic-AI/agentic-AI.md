@@ -16,7 +16,7 @@ This is the default main agent.
 What it does:
 - understand your request: detect what you want to do
 - choose the correct folder: map topic to the right path
-- call subagent when needed: delegate Q&A work automatically
+- call subagent automatically for Q&A generation/review: delegate to `interviewer` without requiring special delegation wording
 - update docs / files / repo structure directly when needed: handle non-Q&A repo tasks
 
 Best user input style:
@@ -29,6 +29,7 @@ Examples:
 
 ```text
 Generate Q&A for Event-Driven Architecture in message-queue/EDA
+Generate Q&A for Agile methodology in methodologies/agile
 Generate pitfalls folder for backend/nodejs
 Add 3 Level 2 questions to backend/C#/foundation/QnA.md about LINQ
 Review and improve frameworks/ASP.NET/pitfalls/QnA.md
@@ -136,6 +137,7 @@ New feedback: <new rule>
 
 ```text
 Generate Q&A for Event-Driven Architecture in message-queue/EDA
+Generate Q&A for Agile methodology in methodologies/agile
 Generate only pitfalls Q&A for backend/nodejs
 Add 3 Level 2 questions to backend/C#/foundation/QnA.md about async/await
 Add 1 question to backend/C#/foundation/QnA.md. Question is: distinguishing IQueryable vs IEnumerable vs List

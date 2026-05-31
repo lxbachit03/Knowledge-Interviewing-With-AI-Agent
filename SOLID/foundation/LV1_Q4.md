@@ -291,6 +291,81 @@ Việc lạm dụng kế thừa dẫn đến vi phạm LSP là một trong nhữ
 
 ===============
 
+**Question 4:** Code demo cho 3 trường hợp vi phạm đó
+
+**Answer:** Chào bạn, đây là minh họa cụ thể bằng code C# cho 3 "dấu hiệu đỏ" (red flags) cho thấy bạn đang vi phạm nguyên tắc **Liskov Substitution Principle (LSP)**.
+
+### 1. Class con ném ra Exception (Lỗi khi gọi phương thức cha)
+
+Đây là trường hợp phổ biến nhất. Hành vi này khiến lập trình viên sử dụng class cha không thể an tâm gọi phương thức mà không kèm theo `try-catch`.
+
+```csharp
+public class Document {
+    public virtual void Save() => Console.WriteLine("Đã lưu vào Database.");
+}
+
+public class ReadOnlyDocument : Document {
+    public override void Save() {
+        // VI PHẠM: Hành vi này phá vỡ hợp đồng của lớp cha
+        throw new InvalidOperationException("Không được phép lưu tài liệu này!");
+    }
+}
+```
+
+---
+
+### 2. Phải dùng `if/else` hoặc `is/as` để kiểm tra Type
+
+Nếu bạn phải kiểm tra kiểu dữ liệu để quyết định xem có nên gọi hàm đó hay không, chứng tỏ class con không thực sự thay thế được class cha một cách trọn vẹn.
+
+```csharp
+public void ProcessDocuments(List<Document> documents) {
+    foreach (var doc in documents) {
+        // VI PHẠM: Phải kiểm tra kiểu để tránh ném lỗi
+        if (!(doc is ReadOnlyDocument)) {
+            doc.Save();
+        } else {
+            Console.WriteLine("Bỏ qua tài liệu chỉ đọc.");
+        }
+    }
+}
+```
+
+---
+
+### 3. Class con để trống (Ghi đè nhưng không làm gì)
+
+Trường hợp này xảy ra khi lớp cha ép buộc lớp con phải thừa kế một chức năng mà lớp con không hề có nhu cầu sử dụng (Thường là dấu hiệu của việc vi phạm cả **Interface Segregation Principle**).
+
+```csharp
+public class Bird {
+    public virtual void Fly() => Console.WriteLine("Chim đang bay.");
+}
+
+public class Ostrich : Bird {
+    public override void Fly() {
+        // VI PHẠM: Đà điểu không biết bay, hàm để trống hoặc làm gì đó vô nghĩa
+        // Điều này làm người dùng class Bird lầm tưởng Ostrich cũng biết bay
+    }
+}
+```
+
+---
+
+### Lời khuyên để khắc phục:
+
+Để tránh 3 trường hợp trên, giải pháp tốt nhất là **tách Interface (Interface Segregation)** thay vì cố gắng dùng kế thừa lớp.
+
+**Ví dụ khắc phục cho trường hợp 1 & 3:**
+
+- Thay vì dùng `Document`, hãy tạo `IStorable` (Interface cho các thứ có thể lưu).
+- Thay vì dùng `Bird`, hãy tạo `IFlyable`.
+- Chỉ các class nào thực sự cần tính năng đó mới implement interface tương ứng.
+
+Khi đó, code của bạn sẽ không bao giờ phải ném `Exception` hay dùng `if/else` để kiểm tra kiểu dữ liệu nữa. Bạn có thấy cách tiếp cận sử dụng Interface giúp code của mình trở nên "trong suốt" và dễ quản lý hơn so với việc dùng kế thừa lớp không?
+
+===============
+
 **Question 4:** 1 Ví dụ về lớp con kế thừa lớp cha hoàn toàn và 1 ví dụ về class con mở rộng class cha, kèm theo code ví dụ
 
 **Answer:** Dưới đây là 2 ví dụ phân biệt rõ ràng giữa việc **kế thừa hoàn toàn** (chỉ sử dụng lại code của cha) và **mở rộng** (thêm tính năng mới vào class con) trong C#.

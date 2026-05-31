@@ -1,0 +1,6 @@
+- record / class
+  -> reference type
+  -> record: imutable (khởi tạo 1 lần)
+  -> record: _value-based equality_ + _with expression_ != class: _reference-equality_
+  --> record: override equals() + GetHashCode() methods + "==" and "!=" operators
+  -->

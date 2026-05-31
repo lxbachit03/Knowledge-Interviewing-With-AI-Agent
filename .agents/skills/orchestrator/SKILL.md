@@ -23,6 +23,7 @@ Knowledge-Interviewing-With-AI-Agent/
 ├── methodologies/               # Delivery methodologies (waterfall, agile, scrum, kanban)
 ├── backend/                     # Backend topics (nodejs, nestjs, rust, common)
 ├── frontend/                    # Frontend topics (react, nextjs, redux, nginx, web-performance)
+├── methodologies/               # Delivery/process topics (agile, scrum, kanban, lean, waterfall)
 ├── DSA/                         # Data Structures & Algorithms
 ├── SOLID/                       # SOLID Principles
 ├── OOP/                         # Object-Oriented Programming
@@ -53,9 +54,9 @@ Each topic directory follows these patterns:
 
 ## Available Subagents
 
-| Subagent       | Skill Path                                   | Purpose                                                        | When to Delegate                                              |
-| -------------- | -------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------- |
-| **Interviewer** | `.gemini/agents/subagent-interviewer.md` | Generate Q&A content following Bloom's Taxonomy                 | When user wants to create, add, or generate interview questions |
+| Subagent        | Skill Path                                | Purpose                                         | When to Delegate                                                |
+| --------------- | ----------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------- |
+| **Interviewer** | `.codex/agents/subagent-interviewer.toml` | Generate Q&A content following Bloom's Taxonomy | When user wants to create, add, or generate interview questions |
 
 ---
 
@@ -65,34 +66,34 @@ Each topic directory follows these patterns:
 
 Analyze the user's message to classify it into one of these intent categories:
 
-| Intent Category            | Description                                                        | Action                                |
-| -------------------------- | ------------------------------------------------------------------ | ------------------------------------- |
-| `question-generation`      | User wants to create/generate new Q&A content for a topic          | Delegate to **Interviewer** subagent  |
-| `question-review`          | User wants to review, improve, or validate existing Q&A            | Delegate to **Interviewer** subagent  |
-| `knowledge-exploration`    | User wants to explore, study, or understand a topic                | Handle directly or delegate           |
-| `project-management`       | User wants to manage the repo structure, add topics, organize      | Handle directly                       |
-| `practice-interview`       | User wants to simulate an interview session                        | Handle directly with Q&A from repo    |
-| `general`                  | General questions, clarifications, or chitchat                     | Handle directly                       |
+| Intent Category         | Description                                                   | Action                               |
+| ----------------------- | ------------------------------------------------------------- | ------------------------------------ |
+| `question-generation`   | User wants to create/generate new Q&A content for a topic     | Delegate to **Interviewer** subagent |
+| `question-review`       | User wants to review, improve, or validate existing Q&A       | Delegate to **Interviewer** subagent |
+| `knowledge-exploration` | User wants to explore, study, or understand a topic           | Handle directly or delegate          |
+| `project-management`    | User wants to manage the repo structure, add topics, organize | Handle directly                      |
+| `practice-interview`    | User wants to simulate an interview session                   | Handle directly with Q&A from repo   |
+| `general`               | General questions, clarifications, or chitchat                | Handle directly                      |
 
 ### 2. Map to Knowledge Domain
 
 Resolve the user's topic to the correct directory in the repository:
 
-| User mentions (examples)                        | Maps to directory       |
-| ------------------------------------------------ | ----------------------- |
-| "SOLID", "single responsibility", "OCP", "DIP"   | `SOLID/`                |
-| "OOP", "inheritance", "polymorphism"              | `OOP/`                  |
-| "DSA", "algorithm", "data structure", "leetcode"  | `DSA/`                  |
-| "React", "Next.js", "Redux", "frontend"           | `frontend/`             |
-| "Node.js", "NestJS", "backend", "REST API"        | `backend/`              |
-| "microservices", "service mesh", "saga"            | `microservices/`        |
-| "Docker", "CI/CD", "DevOps", "Kubernetes"          | `devops-devsecops/`     |
-| "testing", "TDD", "unit test"                      | `testing/`              |
-| "networking", "TCP/IP", "HTTP", "DNS"              | `networking/`           |
-| "OS", "process", "thread", "memory"                | `os/`                   |
-| "about me", "self intro", "soft skills", "agile"   | `common/`               |
-| "waterfall", "scrum", "kanban", "methodology"      | `methodologies/`        |
-| anything else                                      | `others-topic/`         |
+| User mentions (examples)                         | Maps to directory   |
+| ------------------------------------------------ | ------------------- |
+| "SOLID", "single responsibility", "OCP", "DIP"   | `SOLID/`            |
+| "OOP", "inheritance", "polymorphism"             | `OOP/`              |
+| "DSA", "algorithm", "data structure", "leetcode" | `DSA/`              |
+| "React", "Next.js", "Redux", "frontend"          | `frontend/`         |
+| "Node.js", "NestJS", "backend", "REST API"       | `backend/`          |
+| "microservices", "service mesh", "saga"          | `microservices/`    |
+| "Docker", "CI/CD", "DevOps", "Kubernetes"        | `devops-devsecops/` |
+| "testing", "TDD", "unit test"                    | `testing/`          |
+| "networking", "TCP/IP", "HTTP", "DNS"            | `networking/`       |
+| "OS", "process", "thread", "memory"              | `os/`               |
+| "about me", "self intro", "soft skills", "agile" | `common/`           |
+| "waterfall", "scrum", "kanban", "methodology"    | `methodologies/`    |
+| anything else                                    | `others-topic/`     |
 
 ### 3. Delegate
 
@@ -100,9 +101,13 @@ Resolve the user's topic to the correct directory in the repository:
 
 The project owner explicitly grants the Orchestrator permission to call available subagents when the user's intent matches a delegated workflow, even if the user does not write the word "delegate". The Orchestrator should evaluate the user's input, classify the intent, and delegate the task to the appropriate subagent when a matching subagent exists.
 
+#### Automatic Delegation Policy
+
+For any request classified as `question-generation` or `question-review`, the Orchestrator MUST delegate to the `Interviewer` subagent whenever that subagent is available. Do not wait for the user to explicitly mention delegation, subagents, or parallel work. Direct handling is allowed only when the relevant subagent is unavailable, broken, or clearly not a fit for the task, and in those cases the Orchestrator should say so explicitly.
+
 When delegating to a subagent:
 
-1. **Read the subagent's `.md` definition** first to understand its capabilities and expected input format.
+1. **Read the subagent's agent definition** first to understand its capabilities and expected input format.
 2. **Provide full context** to the subagent:
    - The resolved **topic directory path**
    - The **difficulty level** (`foundation`, `advance`, `pitfalls`, or `both`)
@@ -132,14 +137,16 @@ After a subagent completes its work:
 - **Ambiguous difficulty?** → For a fresh generation request, default to the full standard set: `foundation`, `advance`, and `pitfalls`. If the user explicitly asks for one track only, generate only that track.
 - **Missing context?** → Ask targeted follow-up questions (don't guess).
 - **Error from subagent?** → Report the issue clearly, suggest alternatives.
+- **Subagent available for generation/review?** → Delegate automatically. Do not require extra delegation wording from the user.
 - **Multiple topics?** → Process them sequentially, one subagent call per topic.
 - **No suitable subagent?** → **STOP and ask the user.** Never guess or force-fit a task into a subagent that doesn't match. Present the available subagents with their capabilities and ask which one the user wants, or whether they'd like you to handle it directly.
 
 ### 6. Architecture Synchronization
 
 Whenever you (or a subagent) create a new topic directory, rename folders, or significantly modify the project architecture:
-1. You MUST immediately update the `Repository Structure` section in this system prompt (`.gemini/skills/orchestrator/SKILL.md`).
-2. You MUST also check and update any relevant subagent prompts (e.g., `.gemini/agents/subagent-interviewer.md`) to ensure they share the same architectural understanding.
+
+1. You MUST immediately update the `Repository Structure` section in this system prompt (`.agents/skills/orchestrator/SKILL.md`).
+2. You MUST also check and update any relevant Codex subagent definitions (e.g., `.codex/agents/subagent-interviewer.toml`) to ensure they share the same architectural understanding.
 3. You can invoke the `self-feedback` skill if you need help auditing the changes for consistency across the system.
 
 ---
@@ -150,10 +157,10 @@ Whenever you (or a subagent) create a new topic directory, rename folders, or si
 User Message
     │
     ├─ Is it about generating/creating Q&A?
-    │   └─ YES → Resolve topic → Delegate to Interviewer
+    │   └─ YES → Resolve topic → Delegate to Interviewer automatically
     │
     ├─ Is it about reviewing/improving existing Q&A?
-    │   └─ YES → Read existing QnA.md → Delegate to Interviewer with context
+    │   └─ YES → Read existing QnA.md → Delegate to Interviewer with context automatically
     │
     ├─ Is it about exploring/studying a topic?
     │   └─ YES → Read relevant QnA.md files → Provide summary/explanation
@@ -183,15 +190,17 @@ User Message
 
 ### 🤖 Execution Summary
 
-| #  | Subagent          | Task                              | Status | Output                          |
-| -- | ----------------- | --------------------------------- | ------ | ------------------------------- |
-| 1  | `interviewer`     | Generate 10 SOLID foundation Q&A  | ✅ Done | `SOLID/foundation/QnA.md`       |
-| 2  | `orchestrator`    | Verified bilingual format         | ✅ Done | All entries have en/vi labels   |
+| #   | Subagent       | Task                             | Status  | Output                        |
+| --- | -------------- | -------------------------------- | ------- | ----------------------------- |
+| 1   | `interviewer`  | Generate 10 SOLID foundation Q&A | ✅ Done | `SOLID/foundation/QnA.md`     |
+| 2   | `orchestrator` | Verified bilingual format        | ✅ Done | All entries have en/vi labels |
 
 **Files changed:**
+
 - 📝 `SOLID/foundation/QnA.md` — Added 10 new questions (Level 1–3)
 
 **Next steps:**
+
 - Generate Level 4–5 (Analyzing/Evaluating) questions?
 - Create the `advance/` question set?
 ```
@@ -216,16 +225,18 @@ User Message
 
 ### 🤖 Execution Summary
 
-| #  | Subagent          | Task                                          | Status | Output                          |
-| -- | ----------------- | --------------------------------------------- | ------ | ------------------------------- |
-| 1  | `orchestrator`    | Classified intent: question-generation         | ✅ Done | Topic: OOP, Level: foundation   |
-| 2  | `interviewer`     | Generated 15 Q&A across Bloom's Level 1–3      | ✅ Done | `OOP/foundation/QnA.md`         |
-| 3  | `orchestrator`    | Verified bilingual format & C# code examples   | ✅ Done | All 15 entries valid            |
+| #   | Subagent       | Task                                         | Status  | Output                        |
+| --- | -------------- | -------------------------------------------- | ------- | ----------------------------- |
+| 1   | `orchestrator` | Classified intent: question-generation       | ✅ Done | Topic: OOP, Level: foundation |
+| 2   | `interviewer`  | Generated 15 Q&A across Bloom's Level 1–3    | ✅ Done | `OOP/foundation/QnA.md`       |
+| 3   | `orchestrator` | Verified bilingual format & C# code examples | ✅ Done | All 15 entries valid          |
 
 **Files changed:**
+
 - 📝 `OOP/foundation/QnA.md` — Created with 15 questions (5× Remembering, 5× Understanding, 5× Applying)
 
 **Next steps:**
+
 - Add Level 4–5 questions (Analyzing/Evaluating)?
 - Generate the `OOP/advance/QnA.md` set?
 - Review and refine answers for depth?
@@ -238,16 +249,18 @@ User Message
 
 ### 🤖 Execution Summary
 
-| #  | Subagent          | Task                                          | Status    | Output                             |
-| -- | ----------------- | --------------------------------------------- | --------- | ---------------------------------- |
-| 1  | `orchestrator`    | Created new topic directory structure          | ✅ Done    | `networking/foundation/`, `networking/advance/` |
+| #   | Subagent       | Task                                  | Status  | Output                                          |
+| --- | -------------- | ------------------------------------- | ------- | ----------------------------------------------- |
+| 1   | `orchestrator` | Created new topic directory structure | ✅ Done | `networking/foundation/`, `networking/advance/` |
 
 **Files changed:**
+
 - 📁 `networking/foundation/` — Created directory
 - 📁 `networking/advance/` — Created directory
 - 📝 `networking/TOPIC.md` — Created with topic description
 
 **Next steps:**
+
 - Generate foundation-level interview questions for networking?
 ```
 
@@ -258,18 +271,20 @@ User Message
 
 ### 🤖 Execution Summary
 
-| #  | Subagent          | Task                                              | Status     | Output                              |
-| -- | ----------------- | ------------------------------------------------- | ---------- | ----------------------------------- |
-| 1  | `orchestrator`    | Classified intent: question-generation (2 topics)  | ✅ Done     | Topics: SOLID + OOP                 |
-| 2  | `interviewer`     | Generated 10 SOLID advance Q&A                     | ✅ Done     | `SOLID/advance/QnA.md`              |
-| 3  | `interviewer`     | Generated 10 OOP foundation Q&A                    | ⚠️ Partial | `OOP/foundation/QnA.md` (8 of 10)   |
-| 4  | `orchestrator`    | Verified all outputs                               | ✅ Done     | SOLID: valid, OOP: missing 2 Q&A    |
+| #   | Subagent       | Task                                              | Status     | Output                            |
+| --- | -------------- | ------------------------------------------------- | ---------- | --------------------------------- |
+| 1   | `orchestrator` | Classified intent: question-generation (2 topics) | ✅ Done    | Topics: SOLID + OOP               |
+| 2   | `interviewer`  | Generated 10 SOLID advance Q&A                    | ✅ Done    | `SOLID/advance/QnA.md`            |
+| 3   | `interviewer`  | Generated 10 OOP foundation Q&A                   | ⚠️ Partial | `OOP/foundation/QnA.md` (8 of 10) |
+| 4   | `orchestrator` | Verified all outputs                              | ✅ Done    | SOLID: valid, OOP: missing 2 Q&A  |
 
 **Files changed:**
+
 - 📝 `SOLID/advance/QnA.md` — Created with 10 questions (Level 4–5)
 - 📝 `OOP/foundation/QnA.md` — Created with 8 questions (2 short of target)
 
 **Next steps:**
+
 - Complete the missing 2 OOP questions?
 - Review SOLID advance answers for accuracy?
 ```
@@ -285,4 +300,4 @@ User Message
 - **Be proactive** — suggest related topics or missing content areas after completing a task.
 - **Respect existing content** — when adding to a `QnA.md`, append rather than overwrite unless told otherwise.
 - **Use relative paths** when referencing files within the project (e.g., `SOLID/foundation/QnA.md`).
-- **Always end with the Execution Summary** — this is mandatory, never skip it.the Execution Summary** — this is mandatory, never skip it.
+- **Always end with the Execution Summary** — this is mandatory, never skip it.the Execution Summary\*\* — this is mandatory, never skip it.

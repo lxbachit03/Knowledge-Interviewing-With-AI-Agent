@@ -47,10 +47,12 @@ vi: Định nghĩa thực tế của Nguyên tắc Đóng/Mở (OCP) là gì?
 **Answer:**
 en: ...
 vi:
-**Open/Closed Principle (OCP):** "Các thực thể phần mềm (lớp, mô-đun, hàm, v.v.) nên được mở để mở rộng nhưng đóng đối với việc sửa đổi." Điều này cho phép chúng ta phát triển các tính năng của hệ thống bằng cách thêm các mô-đun mới thay vì viết lại các mô-đun cũ. **Mục tiêu** là giảm phát sinh rủi ro ở những chức năng đã có khi thêm chức năng mới.
+**Open/Closed Principle (OCP):** "Các thực thể phần mềm (lớp, mô-đun, hàm, v.v.) nên được mở để mở rộng nhưng đóng đối với việc sửa đổi." Điều này cho phép chúng ta phát triển các tính năng của hệ thống bằng cách thêm các mô-đun mới thay vì viết lại các mô-đun cũ. **Mục tiêu** là giảm phát sinh rủi ro ở những chức năng đã có khi thêm chức năng mới. Tận dụng tính đa hình (Polymorphism) để hệ thống tự động nhận diện và thực thi code mới mà không cần can thiệp vào logic cũ.
 **Vấn đề:** Khi có một yêu cầu mới, thường chúng ta sẽ vào sửa đổi trực tiếp vào mã nguồn của code cũ (thêm if/else hoặc switch/case). Điều này rất dễ sinh ra bug ngầm không mong muốn ngoài ra nếu có test case thì phải sửa lại test case cũ để test case mới hoạt động.
 **Giải pháp:** Mình sẽ thiết kế sao cho có khả năng mở rộng bằng cách là tạo một class mới kế thừa (extend) hoặc thực thi (implement) các interface có sẵn hoặc tạo mới, mà không cần đụng vào code đang chạy tốt.
 **Ví dụ**: Thay vì viết một hàm tính lương có if (loại_nhân_viên == "Fulltime") ... else if (loại_nhân_viên == "Parttime"), hãy tạo một interface NhanVien có hàm tinhLuong(). Các class NhanVienFulltime và NhanVienParttime sẽ tự triển khai logic tính lương của riêng mình.
+
+=> Demo: ./DEMO_O.md
 
 #### Q4: Define the Liskov Substitution Principle (LSP)?
 
@@ -89,7 +91,7 @@ vi: Định nghĩa thực tế của Nguyên tắc đảo ngược phụ thuộc
 **Answer:**
 en: ...
 vi:
-**Nguyên tắc đảo ngược phụ thuộc (DIP):** ...
+**Nguyên tắc đảo ngược phụ thuộc (DIP):** Các module cấp cao không nên phụ thuộc vào các module cấp thấp. Cả hai nên phụ thuộc vào abstraction (interface hoặc abstract class) thay vì concrete class
 **Vấn đề:** Nếu module cấp cao (ví dụ: class nghiệp vụ) phụ thuộc trực tiếp vào module cấp thấp (ví dụ: class Database), thì khi module cấp thấp thay đổi, module cấp cao cũng phải thay đổi theo. Điều này làm giảm tính linh hoạt của hệ thống. Cụ thể hơn là khởi tạo trực tiếp class cụ thể thay vì interface.
 **Ví dụ:** Khởi tạo database trực tiếp bên trong class nghiệp vụ.
 **Giải pháp:** Module cấp cao và module cấp thấp chỉ nên giao tiếp với nhau thông qua interface (ví dụ: IDabase). Phần triển khai cụ thể (MySQLDatabase hoặc MongoDBDatabase) sẽ được inject vào thông qua constructor hoặc setter. Kỹ thuật phổ biến nhất để thực hiện nguyên tắc này là Dependency Injection.

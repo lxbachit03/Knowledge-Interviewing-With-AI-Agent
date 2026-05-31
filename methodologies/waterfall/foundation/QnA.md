@@ -1,143 +1,411 @@
-# Waterfall Foundation Q&A
+# Waterfall Methodology Foundation Q&A
 
 ### Level 1: Remembering
 
-#### Q1: What is the Waterfall methodology?
+#### Q_LEVEL1_101: What is Waterfall methodology?
 
 **Question:**
-en: What is the Waterfall methodology?
-vi: Phương pháp Waterfall là gì?
+en: What is Waterfall methodology?
+vi: Waterfall methodology là gì?
 
 **Answer:**
-en: Waterfall is a linear software development methodology where work moves through predefined phases in sequence, such as requirements, design, implementation, testing, deployment, and maintenance. Each phase is expected to be largely completed before the next phase begins.
-vi: Waterfall là một phương pháp phát triển phần mềm tuyến tính, trong đó công việc đi qua các giai đoạn được xác định trước theo thứ tự như yêu cầu, thiết kế, triển khai, kiểm thử, triển khai phát hành và bảo trì. Mỗi giai đoạn thường phải hoàn thành phần lớn trước khi chuyển sang giai đoạn tiếp theo.
+en: Waterfall methodology is a linear project delivery approach where work moves through fixed phases such as requirements, design, implementation, testing, deployment, and maintenance in sequence.
+vi: Waterfall methodology là phương pháp triển khai dự án theo chuỗi tuyến tính, trong đó công việc đi qua các giai đoạn cố định như requirements, design, implementation, testing, deployment và maintenance theo thứ tự.
 
-#### Q2: What are the typical phases in Waterfall?
+#### Q_LEVEL1_112: What is the main idea behind Waterfall?
 
 **Question:**
-en: What are the typical phases in Waterfall?
-vi: Các giai đoạn điển hình trong Waterfall là gì?
+en: What is the main idea behind Waterfall?
+vi: Ý tưởng cốt lõi của Waterfall là gì?
 
 **Answer:**
-en: The common phases are requirements gathering, system design, implementation, testing, deployment, and maintenance. Some organizations also add approval or sign-off gates between phases.
-vi: Các giai đoạn phổ biến là thu thập yêu cầu, thiết kế hệ thống, triển khai, kiểm thử, phát hành và bảo trì. Một số tổ chức còn thêm các cổng phê duyệt hoặc ký xác nhận giữa các giai đoạn.
+en: The main idea is to complete one phase before starting the next, with clear handoffs and strong upfront planning.
+vi: Ý tưởng cốt lõi là hoàn thành xong một giai đoạn rồi mới chuyển sang giai đoạn tiếp theo, với handoff rõ ràng và planning từ đầu khá chặt.
 
-#### Q3: What is the main idea behind phase sign-off in Waterfall?
+#### Q_LEVEL1_123: What are the typical phases of Waterfall?
 
 **Question:**
-en: What is the main idea behind phase sign-off in Waterfall?
-vi: Ý tưởng chính của việc ký xác nhận từng giai đoạn trong Waterfall là gì?
+en: What are the typical phases of Waterfall?
+vi: Các giai đoạn điển hình của Waterfall là gì?
 
 **Answer:**
-en: Phase sign-off means stakeholders formally approve the output of one phase before the team moves to the next. This is intended to create control, traceability, and accountability.
-vi: Ký xác nhận từng giai đoạn nghĩa là các bên liên quan chính thức phê duyệt kết quả của một giai đoạn trước khi nhóm chuyển sang giai đoạn tiếp theo. Mục tiêu là tạo ra sự kiểm soát, khả năng truy vết và trách nhiệm rõ ràng.
+en: The typical phases are requirements, system design, implementation, testing, deployment, and maintenance.
+vi: Các giai đoạn điển hình gồm requirements, system design, implementation, testing, deployment và maintenance.
 
-#### Q4: Why is documentation important in Waterfall?
+#### Q_LEVEL1_134: What happens in the requirements phase?
 
 **Question:**
-en: Why is documentation important in Waterfall?
-vi: Vì sao tài liệu lại quan trọng trong Waterfall?
+en: What happens in the requirements phase of Waterfall?
+vi: Trong giai đoạn requirements của Waterfall sẽ diễn ra điều gì?
 
 **Answer:**
-en: Documentation is important because each downstream phase depends on clear outputs from the previous one. Requirements documents, design specifications, test plans, and sign-off records reduce ambiguity and support audits.
-vi: Tài liệu quan trọng vì mỗi giai đoạn phía sau phụ thuộc vào đầu ra rõ ràng từ giai đoạn trước. Tài liệu yêu cầu, đặc tả thiết kế, kế hoạch kiểm thử và biên bản phê duyệt giúp giảm mơ hồ và hỗ trợ kiểm toán.
+en: The team gathers, documents, reviews, and approves business and technical requirements before design begins.
+vi: Team sẽ thu thập, tài liệu hóa, review và phê duyệt các yêu cầu business và kỹ thuật trước khi bước sang design.
+
+#### Q_LEVEL1_145: What is produced during the design phase?
+
+**Question:**
+en: What is usually produced during the design phase in Waterfall?
+vi: Trong giai đoạn design của Waterfall thường tạo ra những gì?
+
+**Answer:**
+en: The team usually produces architecture decisions, system diagrams, data models, interface designs, and implementation plans.
+vi: Team thường tạo ra các quyết định kiến trúc, sơ đồ hệ thống, data model, thiết kế giao diện và kế hoạch implement.
+
+#### Q_LEVEL1_156: What is a phase gate?
+
+**Question:**
+en: What is a phase gate in a Waterfall project?
+vi: Phase gate trong dự án Waterfall là gì?
+
+**Answer:**
+en: A phase gate is a formal checkpoint where deliverables are reviewed and approved before the next phase can start.
+vi: Phase gate là một điểm kiểm tra chính thức nơi các deliverable được review và phê duyệt trước khi phase tiếp theo được bắt đầu.
+
+#### Q_LEVEL1_167: What is sign-off?
+
+**Question:**
+en: What does sign-off mean in Waterfall delivery?
+vi: Sign-off trong Waterfall delivery có nghĩa là gì?
+
+**Answer:**
+en: Sign-off means a stakeholder or authority formally approves a document, phase, or deliverable as complete and acceptable.
+vi: Sign-off nghĩa là stakeholder hoặc người có thẩm quyền chính thức phê duyệt một tài liệu, một phase hoặc một deliverable là đã hoàn tất và đạt yêu cầu.
+
+#### Q_LEVEL1_178: What is a deliverable?
+
+**Question:**
+en: What is a deliverable in Waterfall project management?
+vi: Deliverable trong quản lý dự án Waterfall là gì?
+
+**Answer:**
+en: A deliverable is a defined output such as a requirement document, design specification, test plan, or released system.
+vi: Deliverable là đầu ra được xác định rõ, ví dụ như requirement document, design specification, test plan hoặc hệ thống đã phát hành.
+
+#### Q_LEVEL1_189: What is baseline documentation?
+
+**Question:**
+en: What is baseline documentation in Waterfall?
+vi: Baseline documentation trong Waterfall là gì?
+
+**Answer:**
+en: Baseline documentation is the approved version of key project documents that serves as the official reference for later work.
+vi: Baseline documentation là phiên bản đã được phê duyệt của các tài liệu quan trọng trong dự án và được dùng làm mốc tham chiếu chính thức cho các bước sau.
+
+#### Q_LEVEL1_190: What is change control?
+
+**Question:**
+en: What is change control in Waterfall?
+vi: Change control trong Waterfall là gì?
+
+**Answer:**
+en: Change control is the process of evaluating, approving, rejecting, and tracking proposed changes after scope or documents have been baselined.
+vi: Change control là quy trình đánh giá, phê duyệt, từ chối và theo dõi các thay đổi được đề xuất sau khi scope hoặc tài liệu đã được baseline.
+
+#### Q_LEVEL1_201: What is scope in a Waterfall project?
+
+**Question:**
+en: What does scope mean in a Waterfall project?
+vi: Scope trong dự án Waterfall có nghĩa là gì?
+
+**Answer:**
+en: Scope defines the agreed project boundaries, including what will be delivered, what will not be delivered, and under which constraints.
+vi: Scope xác định ranh giới đã được thống nhất của dự án, bao gồm những gì sẽ được bàn giao, những gì không làm và các ràng buộc đi kèm.
+
+#### Q_LEVEL1_212: What is requirement traceability?
+
+**Question:**
+en: What is requirement traceability?
+vi: Requirement traceability là gì?
+
+**Answer:**
+en: Requirement traceability is the ability to connect each requirement to design, implementation, test cases, and final validation.
+vi: Requirement traceability là khả năng liên kết từng requirement với design, implementation, test case và bước xác nhận cuối cùng.
+
+#### Q_LEVEL1_223: What is the purpose of a test plan in Waterfall?
+
+**Question:**
+en: What is the purpose of a test plan in Waterfall?
+vi: Mục đích của test plan trong Waterfall là gì?
+
+**Answer:**
+en: A test plan defines testing scope, approach, responsibilities, schedule, entry criteria, and exit criteria before test execution starts.
+vi: Test plan xác định phạm vi kiểm thử, cách tiếp cận, trách nhiệm, lịch trình, entry criteria và exit criteria trước khi bắt đầu test execution.
+
+#### Q_LEVEL1_234: What is verification?
+
+**Question:**
+en: What does verification mean in the Waterfall context?
+vi: Verification trong bối cảnh Waterfall có nghĩa là gì?
+
+**Answer:**
+en: Verification checks whether the product is being built according to specifications and design documents.
+vi: Verification kiểm tra xem sản phẩm có đang được xây dựng đúng theo specification và design document hay không.
+
+#### Q_LEVEL1_245: What is validation?
+
+**Question:**
+en: What does validation mean in the Waterfall context?
+vi: Validation trong bối cảnh Waterfall có nghĩa là gì?
+
+**Answer:**
+en: Validation checks whether the finished product actually meets user and business needs.
+vi: Validation kiểm tra xem sản phẩm hoàn thiện có thật sự đáp ứng nhu cầu của người dùng và business hay không.
+
+#### Q_LEVEL1_256: What is the role of documentation in Waterfall?
+
+**Question:**
+en: What is the role of documentation in Waterfall?
+vi: Vai trò của documentation trong Waterfall là gì?
+
+**Answer:**
+en: Documentation is central because it defines requirements, design intent, approvals, test expectations, and contractual understanding between parties.
+vi: Documentation giữ vai trò trung tâm vì nó xác định requirements, ý đồ thiết kế, các phê duyệt, kỳ vọng kiểm thử và sự thống nhất mang tính cam kết giữa các bên.
+
+#### Q_LEVEL1_267: What is upfront planning?
+
+**Question:**
+en: What is upfront planning in Waterfall?
+vi: Upfront planning trong Waterfall là gì?
+
+**Answer:**
+en: Upfront planning is the practice of defining scope, schedule, budget, resources, and dependencies early before execution begins.
+vi: Upfront planning là việc xác định scope, lịch trình, ngân sách, nguồn lực và dependency từ sớm trước khi bước vào execution.
+
+#### Q_LEVEL1_278: What is a dependency in Waterfall scheduling?
+
+**Question:**
+en: What is a dependency in Waterfall scheduling?
+vi: Dependency trong lập lịch Waterfall là gì?
+
+**Answer:**
+en: A dependency is a relationship where one task or phase cannot start or finish until another task or phase reaches a certain state.
+vi: Dependency là mối quan hệ mà trong đó một task hoặc phase chưa thể bắt đầu hay kết thúc cho tới khi task hoặc phase khác đạt một trạng thái nhất định.
+
+#### Q_LEVEL1_289: What is maintenance in Waterfall?
+
+**Question:**
+en: What is the maintenance phase in Waterfall?
+vi: Maintenance phase trong Waterfall là gì?
+
+**Answer:**
+en: Maintenance is the post-release phase where the team fixes defects, applies updates, and supports the system in operation.
+vi: Maintenance là giai đoạn sau khi phát hành, nơi team sửa lỗi, cập nhật và hỗ trợ hệ thống trong quá trình vận hành.
+
+#### Q_LEVEL1_300: What is the project manager’s role in Waterfall?
+
+**Question:**
+en: What is the role of a project manager in Waterfall?
+vi: Vai trò của project manager trong Waterfall là gì?
+
+**Answer:**
+en: The project manager coordinates planning, schedule, resources, risks, approvals, communication, and overall phase progress.
+vi: Project manager điều phối planning, lịch trình, nguồn lực, rủi ro, phê duyệt, giao tiếp và tiến độ tổng thể của từng phase.
+
+---
 
 ### Level 2: Understanding
 
-#### Q5: Why is Waterfall considered a predictive methodology?
+#### Q_LEVEL2_311: Why is Waterfall considered sequential?
 
 **Question:**
-en: Why is Waterfall considered a predictive methodology?
-vi: Vì sao Waterfall được xem là một phương pháp dự đoán trước?
+en: Why is Waterfall considered a sequential methodology?
+vi: Vì sao Waterfall được xem là một methodology tuần tự?
 
 **Answer:**
-en: Waterfall is predictive because it attempts to define scope, schedule, budget, and deliverables early in the project. The model assumes that enough can be known upfront to plan the sequence before execution starts.
-vi: Waterfall được xem là phương pháp dự đoán trước vì nó cố gắng xác định phạm vi, tiến độ, ngân sách và đầu ra ngay từ đầu dự án. Mô hình này giả định rằng có thể biết đủ thông tin từ sớm để lập kế hoạch trình tự trước khi triển khai.
+en: Waterfall is considered sequential because each phase depends on the outputs of the previous phase and is expected to be largely completed before the next one begins.
+vi: Waterfall được xem là tuần tự vì mỗi phase phụ thuộc vào đầu ra của phase trước đó và thường được kỳ vọng là phải hoàn tất phần lớn trước khi phase tiếp theo bắt đầu.
 
-#### Q6: Why do changes become expensive in Waterfall?
+#### Q_LEVEL2_322: Why does Waterfall prefer stable requirements?
 
 **Question:**
-en: Why do changes become expensive in Waterfall?
-vi: Vì sao thay đổi trở nên tốn kém trong Waterfall?
+en: Why does Waterfall work better when requirements are stable?
+vi: Vì sao Waterfall hoạt động tốt hơn khi requirements ổn định?
 
 **Answer:**
-en: Changes become expensive because earlier outputs are treated as baselines for later phases. If a requirement changes late, the team may need to revisit design, code, tests, documents, approvals, and schedules.
-vi: Thay đổi trở nên tốn kém vì các đầu ra trước đó được xem như đường cơ sở cho các giai đoạn sau. Nếu yêu cầu thay đổi muộn, nhóm có thể phải làm lại thiết kế, mã nguồn, kiểm thử, tài liệu, phê duyệt và kế hoạch tiến độ.
+en: Waterfall relies on early planning and approved documents, so frequent requirement changes create rework across design, build, and test activities.
+vi: Waterfall dựa nhiều vào planning sớm và tài liệu đã được phê duyệt, nên khi requirements thay đổi thường xuyên sẽ tạo ra rework xuyên suốt design, build và test.
 
-#### Q7: When is Waterfall a good fit?
+#### Q_LEVEL2_333: How is Waterfall different from iterative delivery?
 
 **Question:**
-en: When is Waterfall a good fit?
-vi: Khi nào Waterfall là một lựa chọn phù hợp?
+en: How is Waterfall different from iterative delivery approaches?
+vi: Waterfall khác gì so với các cách tiếp cận delivery theo iteration?
 
 **Answer:**
-en: Waterfall works best when requirements are stable, the domain is well understood, compliance is important, and change is expected to be limited. It is often used in government, construction-like delivery models, and regulated industries.
-vi: Waterfall phù hợp nhất khi yêu cầu ổn định, lĩnh vực đã được hiểu rõ, yếu tố tuân thủ quan trọng và thay đổi được kỳ vọng là ít. Nó thường được dùng trong dự án chính phủ, các mô hình giao hàng giống xây dựng và các ngành bị quản lý chặt chẽ.
+en: Waterfall emphasizes full-phase completion and later integration, while iterative approaches deliver smaller slices earlier to get feedback sooner.
+vi: Waterfall nhấn mạnh việc hoàn tất từng phase tương đối đầy đủ rồi mới chuyển tiếp, còn các phương pháp iterative thường giao các lát giá trị nhỏ sớm hơn để nhận feedback nhanh hơn.
 
-#### Q8: Why can testing late in Waterfall be risky?
+#### Q_LEVEL2_344: Why is documentation heavier in Waterfall?
 
 **Question:**
-en: Why can testing late in Waterfall be risky?
-vi: Vì sao việc kiểm thử muộn trong Waterfall có thể rủi ro?
+en: Why is documentation usually heavier in Waterfall than in Agile methods?
+vi: Vì sao documentation trong Waterfall thường nặng hơn so với các phương pháp Agile?
 
 **Answer:**
-en: Testing late is risky because defects in requirements or design may remain hidden until implementation is mostly done. At that point, fixes are slower, costlier, and more likely to disrupt schedule commitments.
-vi: Kiểm thử muộn là rủi ro vì lỗi trong yêu cầu hoặc thiết kế có thể bị che giấu cho đến khi việc triển khai gần như hoàn tất. Lúc đó việc sửa lỗi sẽ chậm hơn, tốn kém hơn và dễ làm vỡ cam kết về tiến độ.
+en: Documentation is heavier because it acts as the main coordination and control mechanism across phases, approvals, vendors, and testing.
+vi: Documentation nặng hơn vì nó đóng vai trò là cơ chế phối hợp và kiểm soát chính giữa các phase, các vòng phê duyệt, vendor và hoạt động kiểm thử.
+
+#### Q_LEVEL2_355: Why can testing happen late in Waterfall?
+
+**Question:**
+en: Why does testing often happen later in a traditional Waterfall project?
+vi: Vì sao testing trong dự án Waterfall truyền thống thường diễn ra khá muộn?
+
+**Answer:**
+en: Testing often happens later because the model assumes requirements, design, and implementation are completed first, so full-system validation is deferred until after build.
+vi: Testing thường diễn ra muộn vì mô hình này giả định requirements, design và implementation sẽ được hoàn tất trước, nên việc kiểm chứng toàn hệ thống thường bị dời đến sau giai đoạn build.
+
+#### Q_LEVEL2_366: How does Waterfall support compliance-heavy work?
+
+**Question:**
+en: How does Waterfall support compliance-heavy or regulated projects?
+vi: Waterfall hỗ trợ các dự án có yêu cầu compliance hoặc regulation nặng như thế nào?
+
+**Answer:**
+en: Waterfall supports them through formal documentation, approvals, traceability, auditability, and clear evidence that each phase was reviewed and controlled.
+vi: Waterfall hỗ trợ nhóm dự án này thông qua tài liệu chính thức, các bước phê duyệt, traceability, khả năng audit và bằng chứng rõ ràng rằng từng phase đã được review và kiểm soát.
+
+#### Q_LEVEL2_377: Why is change expensive in Waterfall?
+
+**Question:**
+en: Why is late change usually expensive in Waterfall?
+vi: Vì sao thay đổi muộn thường đắt trong Waterfall?
+
+**Answer:**
+en: Late change is expensive because it can invalidate approved requirements, design decisions, schedules, test plans, and contractual commitments, leading to broad rework.
+vi: Thay đổi muộn thường đắt vì nó có thể làm vô hiệu requirement đã duyệt, quyết định thiết kế, lịch trình, test plan và cả cam kết với khách hàng, từ đó tạo rework trên diện rộng.
+
+#### Q_LEVEL2_388: How do handoffs affect Waterfall teams?
+
+**Question:**
+en: How do formal handoffs affect communication in Waterfall teams?
+vi: Các handoff chính thức ảnh hưởng đến giao tiếp trong team Waterfall như thế nào?
+
+**Answer:**
+en: Formal handoffs can improve accountability and clarity, but they can also create silos if teams rely only on documents instead of active collaboration.
+vi: Handoff chính thức có thể giúp tăng accountability và sự rõ ràng, nhưng cũng có thể tạo silo nếu các team chỉ dựa vào tài liệu mà thiếu collaboration thực chất.
+
+#### Q_LEVEL2_399: Why is scope control so important in Waterfall?
+
+**Question:**
+en: Why is strict scope control important in Waterfall delivery?
+vi: Vì sao kiểm soát scope chặt lại quan trọng trong Waterfall delivery?
+
+**Answer:**
+en: Scope control is important because budget, schedule, and downstream plans are built around an approved baseline, so uncontrolled change quickly destabilizes the project.
+vi: Kiểm soát scope chặt là quan trọng vì ngân sách, lịch trình và các kế hoạch phía sau đều được xây trên baseline đã duyệt, nên thay đổi mất kiểm soát sẽ làm dự án mất ổn định rất nhanh.
+
+#### Q_LEVEL2_410: How is risk handled in Waterfall?
+
+**Question:**
+en: How is risk usually handled in Waterfall projects?
+vi: Rủi ro trong dự án Waterfall thường được xử lý như thế nào?
+
+**Answer:**
+en: Risks are usually identified and planned for early, tracked through formal reviews, and mitigated using schedule buffers, approvals, controls, and contingency plans.
+vi: Rủi ro thường được nhận diện và lên kế hoạch xử lý từ sớm, theo dõi qua các buổi review chính thức và giảm thiểu bằng buffer lịch trình, các bước kiểm soát và contingency plan.
+
+#### Q_LEVEL2_421: Why can Waterfall still work for infrastructure projects?
+
+**Question:**
+en: Why can Waterfall still be a good fit for some infrastructure or migration projects?
+vi: Vì sao Waterfall vẫn có thể phù hợp với một số dự án hạ tầng hoặc migration?
+
+**Answer:**
+en: It can fit when scope is predictable, dependencies are known, approvals are formal, and success depends more on controlled execution than on product discovery.
+vi: Nó có thể phù hợp khi scope tương đối dễ dự đoán, dependency đã rõ, phê duyệt mang tính chính thức và thành công phụ thuộc nhiều hơn vào execution có kiểm soát thay vì product discovery.
+
+#### Q_LEVEL2_432: Why is requirement quality critical in Waterfall?
+
+**Question:**
+en: Why is requirement quality especially critical in Waterfall?
+vi: Vì sao chất lượng requirement đặc biệt quan trọng trong Waterfall?
+
+**Answer:**
+en: Requirement quality is critical because unclear or wrong requirements propagate into design, code, test, cost, and delivery commitments.
+vi: Chất lượng requirement là cực kỳ quan trọng vì requirement mơ hồ hoặc sai sẽ lan lỗi sang design, code, test, chi phí và cả cam kết delivery.
+
+#### Q_LEVEL2_443: How does Waterfall affect stakeholder feedback timing?
+
+**Question:**
+en: How does Waterfall affect the timing of stakeholder feedback?
+vi: Waterfall ảnh hưởng đến thời điểm nhận feedback từ stakeholder như thế nào?
+
+**Answer:**
+en: Feedback tends to be concentrated around documents, reviews, and late-stage system demonstrations rather than continuous product increments.
+vi: Feedback thường tập trung quanh các tài liệu, các buổi review và các lần demo hệ thống ở giai đoạn muộn, thay vì đến liên tục qua các increment nhỏ của sản phẩm.
+
+#### Q_LEVEL2_454: Why is estimation often presented as more fixed in Waterfall?
+
+**Question:**
+en: Why are schedule and cost estimates often presented as more fixed in Waterfall?
+vi: Vì sao estimate về lịch trình và chi phí trong Waterfall thường được trình bày như cố định hơn?
+
+**Answer:**
+en: Because Waterfall is commonly used in environments that want early commitments, teams often turn assumptions into baseline plans and manage deviation formally.
+vi: Vì Waterfall thường được dùng trong môi trường muốn có cam kết sớm, nên team hay biến các giả định thành baseline plan và quản lý sai lệch theo quy trình chính thức.
+
+#### Q_LEVEL2_465: How is success typically measured in Waterfall?
+
+**Question:**
+en: How is success typically measured in a Waterfall project?
+vi: Thành công trong dự án Waterfall thường được đo như thế nào?
+
+**Answer:**
+en: Success is typically measured by delivering the agreed scope on time, within budget, with acceptable quality and approved documentation.
+vi: Thành công thường được đo bằng việc bàn giao đúng scope đã chốt, đúng thời gian, trong ngân sách, với chất lượng chấp nhận được và đầy đủ các tài liệu đã phê duyệt.
+
+---
 
 ### Level 3: Applying
 
-#### Q9: A client has fixed legal requirements, fixed deadlines, and mandatory documentation. Would Waterfall be reasonable?
+#### Q_LEVEL3_511: Apply Waterfall to a stable government project
 
 **Question:**
-en: A client has fixed legal requirements, fixed deadlines, and mandatory documentation. Would Waterfall be reasonable?
-vi: Một khách hàng có yêu cầu pháp lý cố định, deadline cố định và bắt buộc tài liệu đầy đủ. Waterfall có hợp lý không?
+en: How would you apply Waterfall to a government system project with fixed compliance requirements?
+vi: Bạn sẽ áp dụng Waterfall như thế nào cho một dự án hệ thống của cơ quan nhà nước có yêu cầu compliance cố định?
 
 **Answer:**
-en: Yes, Waterfall could be a reasonable choice because its phase-based planning, formal approvals, and strong documentation align well with regulated delivery. The key condition is that the requirements are genuinely stable enough to define upfront.
-vi: Có, Waterfall có thể là lựa chọn hợp lý vì cách lập kế hoạch theo giai đoạn, phê duyệt chính thức và tài liệu chặt chẽ của nó phù hợp với môi trường triển khai có quy định. Điều kiện quan trọng là yêu cầu phải thực sự đủ ổn định để xác định ngay từ đầu.
+en: I would start by baselining requirements with formal stakeholder sign-off, then create phase-based plans for design, implementation, testing, and deployment with clear approval gates. I would also maintain traceability from each requirement to design and test evidence so audits and acceptance reviews are straightforward.
+vi: Tôi sẽ bắt đầu bằng việc baseline requirements với sign-off chính thức từ các stakeholder, sau đó lập kế hoạch theo phase cho design, implementation, testing và deployment với approval gate rõ ràng. Đồng thời tôi sẽ duy trì traceability từ từng requirement sang design và bằng chứng test để việc audit và acceptance review diễn ra minh bạch.
 
-#### Q10: How would you explain Waterfall to a junior developer using a simple analogy?
+#### Q_LEVEL3_522: Apply change control to a late feature request
 
 **Question:**
-en: How would you explain Waterfall to a junior developer using a simple analogy?
-vi: Bạn sẽ giải thích Waterfall cho một lập trình viên junior bằng phép so sánh đơn giản như thế nào?
+en: How would you handle a major feature request that appears after design has already been approved in Waterfall?
+vi: Bạn sẽ xử lý thế nào khi một yêu cầu tính năng lớn xuất hiện sau khi design đã được phê duyệt trong Waterfall?
 
 **Answer:**
-en: I would compare it to building a house from a finalized blueprint. You agree on requirements first, then design, then build, then inspect. If you decide to move the kitchen after the walls are up, the change becomes expensive.
-vi: Tôi sẽ so sánh nó với việc xây nhà từ một bản thiết kế đã chốt. Đầu tiên thống nhất yêu cầu, sau đó thiết kế, rồi xây dựng, rồi kiểm tra. Nếu quyết định dời nhà bếp sau khi tường đã xây xong, chi phí thay đổi sẽ rất cao.
+en: I would route it through formal change control, estimate the impact on scope, schedule, budget, design, and tests, then present decision options to stakeholders. The key is not to absorb the change informally because that hides risk and damages planning integrity.
+vi: Tôi sẽ đưa yêu cầu đó vào quy trình change control chính thức, ước lượng tác động lên scope, lịch trình, ngân sách, design và test, rồi trình các phương án quyết định cho stakeholder. Điểm quan trọng là không hấp thụ thay đổi một cách không chính thức vì như vậy sẽ che giấu rủi ro và phá vỡ tính toàn vẹn của kế hoạch.
 
-#### Q11: Show a simple C# example of phase-gated processing similar to Waterfall.
+#### Q_LEVEL3_533: Apply requirement traceability in practice
 
 **Question:**
-en: Show a simple C# example of phase-gated processing similar to Waterfall.
-vi: Hãy minh họa một ví dụ C# đơn giản về xử lý theo cổng giai đoạn giống Waterfall.
+en: How would you set up requirement traceability in a Waterfall software project?
+vi: Bạn sẽ thiết lập requirement traceability như thế nào trong một dự án phần mềm Waterfall?
 
 **Answer:**
-en: A simple example is to prevent implementation from starting until requirements and design are approved. This reflects Waterfall's dependency on completing earlier phases first.
-vi: Một ví dụ đơn giản là ngăn việc triển khai bắt đầu cho đến khi yêu cầu và thiết kế được phê duyệt. Điều này phản ánh sự phụ thuộc của Waterfall vào việc hoàn thành các giai đoạn trước.
+en: I would assign unique IDs to requirements and map them to design sections, implementation components, test cases, and acceptance records. This creates a reliable chain to prove coverage, detect gaps, and support change analysis.
+vi: Tôi sẽ gán ID duy nhất cho từng requirement và map chúng tới các phần design, component implementation, test case và biên bản acceptance. Cách này tạo ra một chuỗi đáng tin cậy để chứng minh độ bao phủ, phát hiện lỗ hổng và hỗ trợ phân tích tác động khi có thay đổi.
 
-```csharp
-public sealed class ProjectState
-{
-    public bool RequirementsApproved { get; init; }
-    public bool DesignApproved { get; init; }
-}
-
-public static class WaterfallGate
-{
-    public static bool CanStartImplementation(ProjectState state)
-    {
-        return state.RequirementsApproved && state.DesignApproved;
-    }
-}
-```
-
-#### Q12: A team keeps receiving major requirement changes every week. What does that suggest about Waterfall suitability?
+#### Q_LEVEL3_544: Apply Waterfall planning to vendor coordination
 
 **Question:**
-en: A team keeps receiving major requirement changes every week. What does that suggest about Waterfall suitability?
-vi: Một nhóm liên tục nhận các thay đổi lớn về yêu cầu mỗi tuần. Điều đó gợi ý gì về mức độ phù hợp của Waterfall?
+en: How would you use Waterfall planning when multiple vendors must hand off deliverables in sequence?
+vi: Bạn sẽ dùng Waterfall planning như thế nào khi nhiều vendor phải bàn giao deliverable theo chuỗi?
 
 **Answer:**
-en: It suggests Waterfall is a weak fit because the project environment is unstable. A more iterative or incremental approach would likely handle ongoing discovery and reprioritization better.
-vi: Điều đó cho thấy Waterfall không phù hợp vì môi trường dự án thiếu ổn định. Một cách tiếp cận lặp hoặc tăng dần có khả năng xử lý việc khám phá liên tục và ưu tiên lại tốt hơn.
+en: I would define deliverables, dependencies, acceptance criteria, and handoff dates explicitly for each vendor, then connect them through milestone reviews and escalation rules. Waterfall helps here because sequence and contractual boundaries are visible.
+vi: Tôi sẽ xác định rõ deliverable, dependency, acceptance criteria và ngày handoff cho từng vendor, sau đó gắn chúng với milestone review và quy tắc escalation. Waterfall hỗ trợ tốt bối cảnh này vì chuỗi phụ thuộc và ranh giới trách nhiệm theo hợp đồng được thể hiện rõ.
+
+#### Q_LEVEL3_555: Apply risk mitigation to late testing
+
+**Question:**
+en: How would you reduce the risk of discovering critical defects too late in a Waterfall project?
+vi: Bạn sẽ giảm rủi ro phát hiện defect nghiêm trọng quá muộn trong dự án Waterfall như thế nào?
+
+**Answer:**
+en: I would improve review quality in earlier phases, add intermediate validation checkpoints, prepare test cases from requirements early, and schedule integration rehearsals before the final test stage. Even in Waterfall, earlier feedback reduces downstream shock.
+vi: Tôi sẽ nâng chất lượng review ở các phase sớm, thêm các checkpoint validation trung gian, chuẩn bị test case từ requirement ngay từ đầu và lên lịch rehearsal cho integration trước giai đoạn test cuối. Ngay cả trong Waterfall, feedback sớm hơn vẫn giúp giảm cú sốc ở giai đoạn sau.

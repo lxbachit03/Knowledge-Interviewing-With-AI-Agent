@@ -32,15 +32,15 @@ The **Orchestrator** delegates to you when the user wants to:
 
 The Orchestrator will provide:
 
-| Field              | Description                                      | Example                      |
-| ------------------ | ------------------------------------------------ | ---------------------------- |
-| `topic_path`       | Target directory for the Q&A                     | `testing/TDD/foundation/`    |
-| `difficulty`       | `foundation`, `advance`, `pitfalls`, or `both`  | `foundation`                 |
-| `bloom_levels`     | Which Bloom's levels to generate                 | `[1, 2, 3]` or `[4, 5]`     |
+| Field              | Description                                       | Example                      |
+| ------------------ | ------------------------------------------------- | ---------------------------- |
+| `topic_path`       | Target directory for the Q&A                      | `testing/TDD/foundation/`    |
+| `difficulty`       | `foundation`, `advance`, `pitfalls`, or `both`    | `foundation`                 |
+| `bloom_levels`     | Which Bloom's levels to generate                  | `[1, 2, 3]` or `[4, 5]`      |
 | `question_count`   | How many questions per level (see defaults below) | Per-level defaults apply     |
-| `sub_topics`       | Specific sub-topics to focus on (optional)       | `["mocking", "refactoring"]` |
-| `code_language`    | Language for code examples                       | `C#` (default)               |
-| `existing_content` | Whether a `QnA.md` already exists (append mode)  | `true` / `false`             |
+| `sub_topics`       | Specific sub-topics to focus on (optional)        | `["mocking", "refactoring"]` |
+| `code_language`    | Language for code examples                        | `C#` (default)               |
+| `existing_content` | Whether a `QnA.md` already exists (append mode)   | `true` / `false`             |
 
 ---
 
@@ -63,13 +63,13 @@ When the target path is under `pitfalls/`:
 
 Generate questions that map to these cognitive levels. **Foundation** files contain Levels 1–3. **Advance** files contain Levels 4–5. **Pitfalls** files usually focus on Levels 1–3 unless the orchestrator explicitly asks for deeper analytical or evaluative pitfalls.
 
-| Level | Name              | Cognitive Action                         | Verbs to Use in Questions                                  | Default Count | Difficulty Split     |
-| ----- | ----------------- | ---------------------------------------- | ---------------------------------------------------------- | ------------- | -------------------- |
-| 1     | **Remembering**   | Recall facts, definitions, terms         | Define, List, State, Name, Identify, What is...?           | **20**        | `foundation/QnA.md` |
-| 2     | **Understanding** | Explain concepts, compare, summarize     | Explain, Describe, Compare, Contrast, Summarize, Why...?   | **15**        | `foundation/QnA.md` |
-| 3     | **Applying**      | Use knowledge in new situations          | Apply, Demonstrate, Implement, Use, Show, Refactor...      | **5**         | `foundation/QnA.md` |
-| 4     | **Analyzing**     | Break down, compare, find relationships  | Analyze, Compare, Contrast, Categorize, Investigate...     | **5**         | `advance/QnA.md`    |
-| 5     | **Evaluating**    | Judge, justify, defend, critique         | Evaluate, Judge, Defend, Critique, Justify, Appraise...    | **5**         | `advance/QnA.md`    |
+| Level | Name              | Cognitive Action                        | Verbs to Use in Questions                                | Default Count | Difficulty Split    |
+| ----- | ----------------- | --------------------------------------- | -------------------------------------------------------- | ------------- | ------------------- |
+| 1     | **Remembering**   | Recall facts, definitions, terms        | Define, List, State, Name, Identify, What is...?         | **20**        | `foundation/QnA.md` |
+| 2     | **Understanding** | Explain concepts, compare, summarize    | Explain, Describe, Compare, Contrast, Summarize, Why...? | **15**        | `foundation/QnA.md` |
+| 3     | **Applying**      | Use knowledge in new situations         | Apply, Demonstrate, Implement, Use, Show, Refactor...    | **5**         | `foundation/QnA.md` |
+| 4     | **Analyzing**     | Break down, compare, find relationships | Analyze, Compare, Contrast, Categorize, Investigate...   | **5**         | `advance/QnA.md`    |
+| 5     | **Evaluating**    | Judge, justify, defend, critique        | Evaluate, Judge, Defend, Critique, Justify, Appraise...  | **5**         | `advance/QnA.md`    |
 
 ### Generation Defaults
 
@@ -79,13 +79,13 @@ If the orchestrator explicitly targets a `pitfalls/` folder, generate only the r
 
 Default question counts per Bloom's level (used when the user does not specify):
 
-| Level | Name            | Default Questions |
-| ----- | --------------- | ----------------- |
-| 1     | Remembering     | **20 questions**  |
-| 2     | Understanding   | **15 questions**  |
-| 3     | Applying        | **5 questions**   |
-| 4     | Analyzing       | **5 questions**   |
-| 5     | Evaluating      | **5 questions**   |
+| Level | Name          | Default Questions |
+| ----- | ------------- | ----------------- |
+| 1     | Remembering   | **20 questions**  |
+| 2     | Understanding | **15 questions**  |
+| 3     | Applying      | **5 questions**   |
+| 4     | Analyzing     | **5 questions**   |
+| 5     | Evaluating    | **5 questions**   |
 
 - **Foundation file** (`foundation/QnA.md`): Levels 1–3 → **40 questions total** (20× Remembering + 15× Understanding + 5× Applying).
 - **Advance file** (`advance/QnA.md`): Levels 4–5 → **10 questions total** (5× Analyzing + 5× Evaluating).
@@ -110,6 +110,7 @@ This same structure applies to `pitfalls/QnA.md` unless the file already has a c
 ```
 
 **Examples:**
+
 - `# TDD Foundation Q&A`
 - `# SOLID Advance Q&A`
 - `# OOP Foundation Q&A`
@@ -123,6 +124,7 @@ This same structure applies to `pitfalls/QnA.md` unless the file already has a c
 ```
 
 **Examples:**
+
 - `### Level 1: Remembering`
 - `### Level 4: Analyzing`
 
@@ -133,7 +135,7 @@ Use `---` horizontal rule separator between levels.
 Each question MUST follow this exact template (where `{N}` is the Bloom's Level and `{DIGITS}` is a random 3-digit number):
 
 ```markdown
-#### Q_LEVEL{N}_{DIGITS}: {Short descriptive title in English}
+#### Q*LEVEL{N}*{DIGITS}: {Short descriptive title in English}
 
 **Question:**
 en: {Full question in English}
@@ -148,8 +150,8 @@ vi: {Answer in Vietnamese}
 
 For Level 3+ (Applying and above), include code examples when relevant:
 
-```markdown
-#### Q_LEVEL{N}_{DIGITS}: {Short descriptive title}
+````markdown
+#### Q*LEVEL{N}*{DIGITS}: {Short descriptive title}
 
 **Question:**
 en: {Full question in English}
@@ -163,7 +165,9 @@ vi: {Explanation in Vietnamese}
 // Code example in C# (default language)
 // Include comments explaining the code
 ```
-```
+````
+
+````
 
 ### Question Block With Detail Link
 
@@ -181,10 +185,11 @@ en: {Brief answer in English}
 vi: {Brief answer in Vietnamese}
 
 **DETAILS =>** {relative_path}/{detail_filename}.md
-```
+````
 
 **Detail file naming convention:** `{Q_ID}.md` (e.g., `Q_LEVEL1_312.md`)
 **Examples:**
+
 - `=> testing/TDD/foundation/Q_LEVEL2_841.md`
 - `=> SOLID/foundation/Q_LEVEL1_312.md`
 - `=> backend/C#/advance/Q_LEVEL4_910.md`
@@ -230,7 +235,7 @@ Below is a complete example showing the expected output format. This uses `testi
 
 ### Foundation QnA.md (Levels 1–3)
 
-```markdown
+````markdown
 # TDD Foundation Q&A
 
 ### Level 1: Remembering
@@ -298,7 +303,9 @@ controller.Signup("test@example.com");
 // Assert: Verify the email service was called
 mockEmail.Verify(e => e.Send(It.IsAny<string>()), Times.Once);
 ```
-```
+````
+
+````
 
 ### Advance QnA.md (Levels 4–5)
 
@@ -330,7 +337,7 @@ vi: Đánh giá sự đánh đổi giữa TDD và phát triển theo kiểu "Tes
 **Answer:**
 en: TDD offers long-term stability and faster maintenance. Test-Last offers faster initial delivery but risks critical failures later. TDD is usually the better investment for core business logic.
 vi: TDD mang lại sự ổn định lâu dài và bảo trì nhanh hơn. Test-Last mang lại khả năng bàn giao ban đầu nhanh hơn nhưng có nguy cơ thất bại nghiêm trọng sau này. TDD thường là khoản đầu tư tốt hơn cho logic kinh doanh cốt lõi.
-```
+````
 
 ---
 
@@ -338,10 +345,10 @@ vi: TDD mang lại sự ổn định lâu dài và bảo trì nhanh hơn. Test-L
 
 When an answer is too complex for the main `QnA.md`, create a separate detail file. Detail files are free-form but should follow this general structure:
 
-```markdown
+````markdown
 {Opening code snippet or problem statement}
 
-**Question Q_LEVEL{N}_{DIGITS}**: {Follow-up question in Vietnamese}
+**Question Q*LEVEL{N}*{DIGITS}**: {Follow-up question in Vietnamese}
 
 **Answer**: {Detailed explanation in Vietnamese}
 
@@ -352,10 +359,12 @@ When an answer is too complex for the main `QnA.md`, create a separate detail fi
 ```csharp
 // Full code example with comments
 ```
+````
 
 ### {Next section}
 
 {Continue the deep-dive...}
+
 ```
 
 **Key rules for detail files:**
@@ -382,3 +391,4 @@ Before returning your output, verify:
 - [ ] Complex answers have `**DETAILS =>** path/to/detail.md` links
 - [ ] Vietnamese answers use natural phrasing, not literal translations
 - [ ] Technical terms are kept in English within Vietnamese text
+```

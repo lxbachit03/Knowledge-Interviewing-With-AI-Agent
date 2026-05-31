@@ -142,6 +142,20 @@ vi: Module `http` dùng để làm gì?
 en: The `http` module provides APIs for creating HTTP servers and clients without installing a framework.
 vi: Module `http` cung cấp API để tạo HTTP server và client mà không cần cài framework bên ngoài.
 
+#### Q_LEVEL1_621: What are Event Emitters?
+
+**Question:**
+en: What are Event Emitters in NodeJS?
+vi: **Event Emitters** trong NodeJS là gì?
+
+**Answer:**
+en: Event Emitters are objects that let code publish named events and let other parts of the program listen for them. They are commonly used in NodeJS for asynchronous and event-driven patterns through the built-in `EventEmitter` class from the `events` module.
+vi: **Event Emitters** là các object cho phép code phát ra các sự kiện có tên và cho phép phần khác của chương trình lắng nghe các sự kiện đó. Chúng thường được dùng trong NodeJS cho các pattern bất đồng bộ và hướng sự kiện thông qua class `EventEmitter` có sẵn trong module `events`.
+
+**DETAILS =>** backend/nodejs/foundation/Q_LEVEL1_621.md
+
+**RESOURCES** [#1]
+
 #### Q_LEVEL1_674: What is Express?
 
 **Question:**
@@ -245,6 +259,26 @@ vi: Giải thích quy ước **error-first callback** trong NodeJS.
 **Answer:**
 en: In NodeJS, many callbacks receive the error as the first argument and the result as the second argument. If the error is not null, the caller should handle the failure before using the result.
 vi: Trong NodeJS, nhiều callback nhận error ở tham số đầu tiên và kết quả ở tham số thứ hai. Nếu error không phải `null`, caller nên xử lý lỗi trước khi dùng kết quả.
+
+#### Q_LEVEL2_492: Explain microtasks and macrotasks.
+
+**Question:**
+en: What are microtasks and macrotasks in NodeJS?
+vi: **Microtasks** và **macrotasks** trong NodeJS là gì?
+
+**Answer:**
+en: Microtasks are small callback jobs that run immediately after the current JavaScript execution finishes, before the event loop moves to the next phase. Common examples include resolved Promise handlers and `queueMicrotask()`. Macrotasks are larger scheduled tasks handled in later event loop phases, such as timers, I/O callbacks, and `setImmediate()`.
+vi: **Microtasks** là các callback nhỏ được chạy ngay sau khi đoạn JavaScript hiện tại kết thúc, trước khi event loop chuyển sang pha tiếp theo. Ví dụ phổ biến là callback của **Promise** đã resolve và `queueMicrotask()`. **Macrotasks** là các tác vụ được lên lịch để xử lý ở các pha sau của event loop, như timer, I/O callback và `setImmediate()`.
+
+#### Q_LEVEL2_526: Differences between Node.js and the Browser.
+
+**Question:**
+en: What are the main differences between Node.js and the browser?
+vi: Những khác biệt chính giữa **Node.js** và trình duyệt là gì?
+
+**Answer:**
+en: Node.js runs JavaScript on the server, while the browser runs JavaScript on the client. Node.js provides APIs for files, processes, networking, and the operating system, but it does not provide browser APIs such as `window`, `document`, or the DOM. Browsers focus on rendering UI and user interaction, while Node.js focuses on backend logic, automation, and server-side tasks.
+vi: **Node.js** chạy JavaScript ở phía server, còn trình duyệt chạy JavaScript ở phía client. **Node.js** cung cấp API cho file, process, networking và hệ điều hành, nhưng không có các browser API như `window`, `document` hoặc DOM. Trình duyệt tập trung vào render giao diện và tương tác người dùng, còn **Node.js** tập trung vào logic backend, tự động hóa và các tác vụ phía server.
 
 #### Q_LEVEL2_553: Explain require versus import.
 
@@ -355,6 +389,30 @@ vi: Vì sao **structured logging** quan trọng trong backend NodeJS?
 **Answer:**
 en: Structured logs make production behavior searchable and measurable. Fields such as request ID, user ID, route, latency, and error code help debug distributed systems.
 vi: **Structured logging** giúp hành vi production dễ tìm kiếm và đo lường. Các trường như request ID, user ID, route, latency và error code giúp debug hệ thống phân tán.
+
+#### Q_LEVEL2_734: Explain memory leaks in NodeJS.
+
+**Question:**
+en: What is a memory leak in NodeJS?
+vi: **Memory leak** trong NodeJS là gì?
+
+**Answer:**
+en: A memory leak happens when the application keeps references to data that is no longer needed, so the garbage collector cannot free it. In NodeJS, common causes include unbounded caches, forgotten event listeners, global state, long-lived closures, and growing queues.
+vi: **Memory leak** xảy ra khi ứng dụng vẫn giữ reference tới dữ liệu không còn cần thiết, khiến **garbage collector** không thể giải phóng bộ nhớ đó. Trong NodeJS, nguyên nhân thường gặp gồm cache không giới hạn, event listener không được gỡ, global state, closure sống quá lâu và queue tăng dần.
+
+**DETAILS =>** /backend/nodejs/foundation/Q_LEVEL2_734.md
+
+#### Q_LEVEL2_789: Explain using PM2 with NodeJS applications.
+
+**Question:**
+en: Why do teams use PM2 with NodeJS applications?
+vi: Vì sao các team dùng **PM2** với ứng dụng NodeJS?
+
+**Answer:**
+en: PM2 is a process manager for NodeJS applications. Teams use it to keep apps running, restart crashed processes, manage multiple instances, handle logs, and simplify deployment or startup scripts. It is especially useful for long-running server processes in environments where you want basic process supervision and operational convenience.
+vi: **PM2** là một process manager cho ứng dụng NodeJS. Các team dùng nó để giữ app luôn chạy, tự khởi động lại khi process bị crash, quản lý nhiều instance, xử lý log và đơn giản hóa việc deploy hoặc script khởi động. Nó đặc biệt hữu ích cho các server process chạy lâu dài khi cần giám sát process cơ bản và sự tiện lợi trong vận hành.
+
+**DETAILS =>** /backend/nodejs/foundation/Q_LEVEL2_789.md
 
 ---
 
